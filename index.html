@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes Ópticas e Sociedade | Portal Educativo</title>
+      <!--  Ligando ao arquivo css-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">Fibra<span>&</span>Sociedade</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Início & Fundamentos</a></li>
+                    <li><a href="cabos.html">Malha Submarina</a></li>
+                    <li><a href="distribuicao.html">Rede no Brasil</a></li>
+                </ul>
+
+            </nav>
+            
+            <button id="theme-toggle" aria-label="Alternar tema claro ou escuro">🌓</button>
+        </div>
+ </header>
+
+    <main>
+       
+        <section class="hero">
+            <div class="container">
+       
+       
+                <h1>A Luz que Conecta o Mundo</h1>
+                <p class="subtitle">Um portal educativo sobre a física das comunicações ópticas, a infraestrutura global de dados e o impacto socioeconômico da conectividade na sociedade contemporânea.</p>
+                <div class="hero-actions">
+                    <a href="cabos.html" class="btn btn-primary">Explorar Globo 3D de Cabos</a>
+                    <a href="#fundamentos" class="btn btn-secondary">Iniciar Leitura Didática</a>
+                </div>
+            </div>  </section>
+
+        <!-- Fundamentos Físicos e Evolução Histórica -->
+        <section id="fundamentos" class="section">
+            <div class="container">
+                <h2>1. Fundamentos Físicos e Evolução Histórica</h2>
+                <div class="grid-2-cols">
+                    <div class="text-block">
+                        <p>Durante mais de um século, as comunicações intercontinentais dependeram de cabos metálicos de cobre (telégrafo e cabo coaxial), nos quais a informação viaja na forma de pulsos elétricos. Contudo, sinais elétricos sofrem forte atenuação capacitativa com a distância, são vulneráveis a interferências eletromagnéticas e possuem limite físico de largura de banda.</p>
+                        <p>A <strong>fibra óptica</strong> superou essas barreiras ao substituir a eletricidade pela luz. Trata-se de um guia de onda dielétrico, cilíndrico e flexível, fabricado a partir de <strong>vidro de sílica ultrapuro</strong> com diâmetro externo de aproximadamente 125 micrômetros — comparável à espessura de um fio de cabelo humano.</p>
+                        <p>O fenômeno físico que possibilita essa transmissão é a <strong>Reflexão Interna Total</strong>: o núcleo (<em>core</em>, índice de refração ~1,48) é envolvido por uma casca (<em>cladding</em>, índice ~1,46). Quando um feixe de laser incide acima do ângulo crítico (~80,6°), ele é continuamente refletido dentro do núcleo sem escapar, propagando-se a cerca de <strong>200.000 km/s</strong>.</p>
+                    </div>
+                    <div class="media-block">
+                        <div class="info-card">
+                            <h3>Do Cobre ao Vidro: Marcos Históricos</h3>
+                            <ul class="timeline-list">
+                                <li><strong>1858:</strong> Primeiro cabo telegráfico transatlântico em cobre conecta a Irlanda ao Canadá, inaugurando as comunicações elétricas intercontinentais.</li>
+                                <li><strong>1956:</strong> Entra em operação o <strong>TAT-1</strong>, primeiro cabo telefônico coaxial transatlântico com repetidores submarinos a válvulas.</li>
+                                <li><strong>1966:</strong> Charles K. Kao demonstra teoricamente que a perda de sinal em fibras de vidro se devia a impurezas metálicas, viabilizando a comunicação óptica (Nobel de Física em 2009).</li>
+                                <li><strong>1970:</strong> Pesquisadores da Corning Glass Works fabricam a primeira fibra óptica de baixa atenuação (&lt; 20 dB/km).</li>
+                                <li><strong>1988:</strong> Inauguração do <strong>TAT-8</strong>, o primeiro cabo submarino transatlântico de fibra óptica ligando EUA, Reino Unido e França.</li>
+                     </ul>
+                     </div>
+                     </div>
+                    </div>
+                     </div>
+               </section>
+
+        <!--  engenharia e classificação das Fibras -->
+        <section id="engenharia" class="section bg-alt">
+            <div class="container">
+                <h2>2. Infraestrutura Técnica: Monomodo vs. Multimodo</h2>
+                <p>Na engenharia de redes, as fibras ópticas são divididas em duas categorias principais conforme o modo de propagação da luz e a distância de alcance:</p>
+                
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Característica Técnica</th>
+                                <th>Fibra Monomodo (SMF)</th>
+                                <th>Fibra Multimodo (MMF)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Diâmetro do Núcleo</strong></td>
+                                <td>8 a 10 micrômetros (µm)</td>
+                                <td>50 ou 62,5 micrômetros (µm)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fonte de Luz</strong></td>
+                                <td>Laser de alta precisão</td>
+                                <td>LED ou VCSEL (laser de cavidade vertical)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Trajetória da Luz</strong></td>
+                                <td>Único feixe axial (sem dispersão modal)</td>
+                                <td>Múltiplos caminhos refletidos simultaneamente</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alcance Típico</strong></td>
+                                <td>Dezenas a milhares de quilômetros</td>
+                                <td>Até 550 metros (curtas distâncias)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aplicação Principal</strong></td>
+                                <td>Cabos submarinos, <em>backbones</em> e redes FTTH</td>
+                                <td>Data centers, redes locais (LAN) e prédios</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!--  Dimensão Social e Sustentabilidade -->
+        <section id="impacto" class="section">
+            <div class="container">
+                <h2>3. Transformação Social, Econômica e Ambiental</h2>
+                <div class="cards-grid">
+                    <article class="card">
+                        <h3>Economia Digital e Trabalho</h3>
+                        <p>A capacidade de transmitir terabits por segundo sustentou a transição para a computação em nuvem, o comércio eletrônico global, as transações financeiras instantâneas e a consolidação do trabalho remoto e híbrido em escala planetária.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Educação, Ciência e Telemedicina</h3>
+                        <p>Permitiu a democratização do ensino superior e técnico via plataformas digitais interativas, a colaboração científica em tempo real entre laboratórios internacionais e o avanço da telemedicina, viabilizando diagnósticos e cirurgias assistidas a distância.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Abismo Digital e Cidadania</h3>
+                        <p>Na sociedade da informação, o acesso à banda larga de qualidade tornou-se condição básica para o exercício da cidadania. A ausência de infraestrutura óptica em zonas rurais e periferias aprofunda desigualdades educacionais e de renda.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Eficiência Energética</h3>
+                        <p>Além da velocidade, redes ópticas passivas (PON) não exigem energia elétrica nos pontos intermediários de distribuição entre a central e o usuário, reduzindo drasticamente o consumo energético e a pegada de carbono das telecomunicações.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+      <!--  Referencias usadas para fontes de dados-->
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-references">
+                <h4>Referências Bibliográficas e Fontes de Dados</h4>
+                <ul>
+                    <li><strong>ANATEL.</strong> <em>Painel de Dados — Acessos de Banda Larga Fixa por Tecnologia (FTTH)</em>. Disponível em: <a href="https://informacoes.anatel.gov.br" target="_blank" rel="noopener">informacoes.anatel.gov.br</a></li>
+                    <li><strong>TELEGEOGRAPHY.</strong> <em>Submarine Cable Map — Global Submarine Fiber Optic Infrastructure</em>. Disponível em: <a href="https://www.submarinecablemap.com" target="_blank" rel="noopener">submarinecablemap.com</a></li>
+                    <li><strong>KMCD.DEV.</strong> <em>Internet Infrastructure Map — The Physical Internet: From Copper to Glass</em>. Disponível em: <a href="https://map.kmcd.dev/" target="_blank" rel="noopener">map.kmcd.dev</a></li>
+                    <li><strong>MINISTÉRIO DAS COMUNICAÇÕES.</strong> <em>Programa Norte Conectado — Infovias Subfluviais</em>. Disponível em: <a href="https://www.gov.br/mcom" target="_blank" rel="noopener">gov.br/mcom</a></li>
+                    <li><strong>CETIC.BR.</strong> <em>Pesquisa TIC Domicílios — Acesso à Internet no Brasil</em>. Disponível em: <a href="https://cetic.br" target="_blank" rel="noopener">cetic.br</a></li>
+                    <li><strong>TANENBAUM, Andrew S.; WETHERALL, David.</strong> <em>Redes de Computadores</em>. 5ª ed. São Paulo: Pearson, 2011.</li>
+                    <li><strong>RNP (Rede Nacional de Ensino e Pesquisa).</strong> <em>Topologia da Rede Ipê — Backbone Óptico Nacional</em>. Disponível em: <a href="https://www.rnp.br/sistema-rnp/rede-ipe" target="_blank" rel="noopener">rnp.br/sistema-rnp/rede-ipe</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>Trabalho acadêmico de Desenvolvimento Web — Tema: Internet e Sociedade.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

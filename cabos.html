@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malha Submarina Global | Portal Educativo</title>
+    <!--  Ligando ao arquivo css-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--  biblioteca JavaScript responsavel por desenhar o globo 3D interativo-->
+    <script src="https://unpkg.com/globe.gl"></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">Fibra<span>&</span>Sociedade</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início & Fundamentos</a></li>
+                    <li><a href="cabos.html" class="active">Malha Submarina</a></li>
+                    <li><a href="distribuicao.html">Rede no Brasil</a></li>
+                
+                </ul>
+            </nav>
+            <button id="theme-toggle" aria-label="Alternar tema claro ou escuro">🌓</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>A Malha Submarina Global</h1>
+                <p>Ao contrário do senso comum, cerca de 99% de todo o tráfego intercontinental de dados viaja pelo leito dos oceanos através de mais de 600 cabos submarinos ativos e planejados, somando mais de 1,4 milhão de quilômetros de extensão.</p>
+            </div>
+            </section>
+
+        <!-- Globo 3D interativo -->
+        <section class="section">
+            <div class="container">
+                <div class="map-intro">
+                    <h2>1. Globo 3D Interativo: Rotas Submarinas Globais</h2>
+                    <p>Arraste o globo terrestre com o mouse (ou toque na tela) para rotacionar, utilize o scroll para aplicar zoom e passe o cursor sobre os arcos luminosos e pontos de aterrissagem para inspecionar os principais cabos submarinos que conectam o Brasil ao mundo.</p>
+                </div>
+                   <div class="map-wrapper">
+                    <div id="submarine-map-container"></div>
+                  </div>
+            </div>
+        </section>
+
+        <!-- Anatomia e engenharia oceânica -->
+        <section class="section bg-alt">
+             <div class="container">
+                <h2>2. Anatomia de um Cabo Submarino e Amplificação Óptica</h2>
+                <div class="grid-2-cols">
+                    <div class="text-block">
+                         <p>Um cabo submarino precisa resistir a pressões de até 500 bar (a 5.000 metros de profundidade), correntes marítimas, atividade sísmica e abrasão. Embora o núcleo óptico seja microscópico, o cabo recebe múltiplas camadas concêntricas de blindagem.</p>
+                        <p><strong>Repetidores Ópticos (EDFA + Raman):</strong> Sem amplificação, o sinal luminoso degrada após cerca de 120 km. Por isso, são instalados repetidores a cada 50 a 80 km no fundo do mar. Eles utilizam fibras dopadas com <strong>Érbio (EDFA)</strong> e amplificação Raman para regenerar diretamente os fótons de laser sem converter o sinal em eletricidade.</p>
+                        <p><strong>Ramificações Submarinas (ROADMs):</strong> Unidades de ramificação subaquáticas (<em>Branching Units</em>) com multiplexadores ópticos reconfiguráveis (ROADMs) permitem derivar comprimentos de onda específicos para ilhas ou cidades costeiras intermediárias sem interromper o fluxo principal.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Camadas de Proteção (De dentro para fora)</h3>
+                        <ol class="layers-list">
+                            <li><strong>Fibras Ópticas (4 a 24 pares):</strong> Filamentos de vidro que transportam os pulsos de laser.</li>
+                            <li><strong>Gel Impermeabilizante:</strong> Bloqueia a infiltração de água sob alta pressão em caso de ruptura.</li>
+                            <li><strong>Tubo de Cobre:</strong> Transporta até 10.000 Volts (corrente contínua) para alimentar os repetidores submarinos.</li>
+                            <li><strong>Isolante de Policarbonato:</strong> Isolamento elétrico de alta tensão.</li>
+                            <li><strong>Barreira de Alumínio:</strong> Impede a difusão de moléculas de água e hidrogênio que escurecem o vidro.</li>
+                            <li><strong>Armadura de Fios de Aço:</strong> Suporta até 10 toneladas de tração durante o lançamento no oceano.</li>
+                            <li><strong>Fita de Mylar e Revestimento de Polietileno:</strong> Blindagem externa contra corrosão e atrito no leito marinho.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principais sistemas conectados ao brasil -->
+        <section class="section">
+            <div class="container">
+                <h2>3. Principais Rotas Submarinas Conectadas ao Brasil</h2>
+                <p>Filtre por região geográfica para conhecer os sistemas estratégicos que conectam o país ao mundo:</p>
+                
+                <div class="filter-buttons" id="cable-filters">
+                    <button class="filter-btn active" data-filter="all">Todos os Cabos</button>
+                    <button class="filter-btn" data-filter="europa">Rota Europa</button>
+                    <button class="filter-btn" data-filter="americas">Rota Américas</button>
+                    <button class="filter-btn" data-filter="africa">Rota África</button>
+                </div>
+
+                <div class="cards-grid" id="cables-list">
+                    <article class="card" data-region="europa">
+                        <h3>EllaLink</h3>
+                        <span class="badge">6.200 km | Europa | RFS 2021</span>
+                        <p>Primeiro cabo de alta capacidade (100 Tbps) ligando diretamente a América do Sul à Europa sem passar pelos EUA. Conecta <strong>Fortaleza (CE)</strong> a <strong>Sines (Portugal)</strong>, reduzindo a latência em quase 50% e fortalecendo a soberania digital sul-americana.</p>
+                    </article>
+                    <article class="card" data-region="americas">
+                        <h3>Monet</h3>
+                        <span class="badge">10.556 km | Américas | RFS 2018</span>
+                        <p>Sistema de 6 pares de fibras com capacidade de 64 Tbps, ligando <strong>Boca Raton (Flórida, EUA)</strong> a <strong>Fortaleza (CE)</strong> e <strong>Praia Grande (SP)</strong>. Operado por consórcio internacional (Google, Algar, Antel e Angola Cables).</p>
+                    </article>
+                    <article class="card" data-region="americas">
+                        <h3>BRUSA</h3>
+                        <span class="badge">11.000 km | Américas | RFS 2018</span>
+                        <p>Cabo da Telxius com capacidade de 160 Tbps conectando <strong>Rio de Janeiro (RJ)</strong> e <strong>Fortaleza (CE)</strong> a <strong>San Juan (Porto Rico)</strong> e <strong>Virginia Beach (EUA)</strong>.</p>
+                    </article>
+                    <article class="card" data-region="americas">
+                        <h3>Firmina</h3>
+                        <span class="badge">14.517 km | Américas</span>
+                        <p>Cabo do Google (~240 Tbps de projeto) conectando a costa leste dos <strong>EUA</strong> a <strong>Praia Grande (SP)</strong>, Uruguai e Argentina. Foi o primeiro cabo transoceânico capaz de operar integralmente com energia vinda de apenas uma extremidade em caso de falha.</p>
+                    </article>
+                    <article class="card" data-region="africa">
+                        <h3>SACS (South Atlantic Cable System)</h3>
+                        <span class="badge">6.165 km | África | RFS 2018</span>
+                        <p>Primeiro cabo óptico a cruzar o Atlântico Sul no hemisfério sul (40 Tbps), conectando diretamente <strong>Fortaleza (CE)</strong> a <strong>Luanda (Angola)</strong> sem depender de rotas pela Europa ou América do Norte.</p>
+                    </article>
+                    <article class="card" data-region="africa">
+                        <h3>SAIL (South Atlantic Inter Link)</h3>
+                        <span class="badge">5.800 km | África | RFS 2020</span>
+                        <p>Sistema de 32 Tbps operado pela Camtel e China Unicom conectando <strong>Fortaleza (CE)</strong> a <strong>Kribi (Camarões)</strong>, ampliando a redundância entre América Latina e África.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vulnerabilidades e manutenção -->
+        <section class="section bg-alt">
+            <div class="container">
+                <h2>4. Vulnerabilidades Geopolíticas e Reparos</h2>
+                <p>Apesar de sua robustez, cerca de 100 a 150 falhas em cabos submarinos ocorrem anualmente no mundo. Mais de 70% desses incidentes são causados por atividades humanas acidentais — principalmente <strong>âncoras de navios mercantes</strong> e <strong>redes de pesca de arrasto</strong> em águas rasas — seguidos por deslizamentos submarinos e terremotos. Quando um cabo se rompe, navios especializados (<em>Cable Ships</em>) utilizam robôs submarinos (ROVs) para localizar o ponto exato, içar as extremidades até a superfície, fundir novamente as fibras de vidro e devolvê-las ao leito oceânico.</p>
+            </div>
+        </section>
+    </main>
+
+
+
+       <!--  Referencias usadas para fontes de dados-->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-references">
+                <h4>Referências Bibliográficas e Fontes de Dados</h4>
+                <ul>
+                    <li><strong>ANATEL.</strong> <em>Painel de Dados — Acessos de Banda Larga Fixa por Tecnologia (FTTH)</em>. Disponível em: <a href="https://informacoes.anatel.gov.br" target="_blank" rel="noopener">informacoes.anatel.gov.br</a></li>
+                    <li><strong>TELEGEOGRAPHY.</strong> <em>Submarine Cable Map — Global Submarine Fiber Optic Infrastructure</em>. Disponível em: <a href="https://www.submarinecablemap.com" target="_blank" rel="noopener">submarinecablemap.com</a></li>
+                    <li><strong>KMCD.DEV.</strong> <em>Internet Infrastructure Map — The Physical Internet: From Copper to Glass</em>. Disponível em: <a href="https://map.kmcd.dev/" target="_blank" rel="noopener">map.kmcd.dev</a></li>
+                    <li><strong>MINISTÉRIO DAS COMUNICAÇÕES.</strong> <em>Programa Norte Conectado — Infovias Subfluviais</em>. Disponível em: <a href="https://www.gov.br/mcom" target="_blank" rel="noopener">gov.br/mcom</a></li>
+                    <li><strong>CETIC.BR.</strong> <em>Pesquisa TIC Domicílios — Acesso à Internet no Brasil</em>. Disponível em: <a href="https://cetic.br" target="_blank" rel="noopener">cetic.br</a></li>
+                    <li><strong>TANENBAUM, Andrew S.; WETHERALL, David.</strong> <em>Redes de Computadores</em>. 5ª ed. São Paulo: Pearson, 2011.</li>
+                    <li><strong>RNP (Rede Nacional de Ensino e Pesquisa).</strong> <em>Topologia da Rede Ipê — Backbone Óptico Nacional</em>. Disponível em: <a href="https://www.rnp.br/sistema-rnp/rede-ipe" target="_blank" rel="noopener">rnp.br/sistema-rnp/rede-ipe</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>Trabalho acadêmico de Desenvolvimento Web — Tema: Internet e Sociedade.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
